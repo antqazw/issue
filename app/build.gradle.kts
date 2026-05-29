@@ -28,6 +28,16 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            ndk {
+                debugSymbolLevel = "FULL"
+            }
+            packaging {
+                jniLibs {
+                    keepDebugSymbols.add("**/libissue.so")
+                }
+            }
+        }
     }
     packaging {
         jniLibs {

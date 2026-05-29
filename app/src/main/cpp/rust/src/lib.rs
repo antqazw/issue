@@ -22,7 +22,8 @@ pub extern "C" fn Java_com_example_rustroverdebugissue_MainActivity_stringFromJN
     _this: JObject<'caller>,
 ) -> JObject<'caller> {
     let outcome = unowned_env.with_env(|env: &mut jni::Env| {
-        env.new_string("Hello from Rust").map(JObject::from)
+        let s = "Hello from Rust";
+        env.new_string(s).map(JObject::from)
     });
 
     outcome.resolve::<ThrowRuntimeExAndDefault>()

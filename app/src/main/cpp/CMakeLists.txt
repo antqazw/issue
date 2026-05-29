@@ -21,7 +21,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Corrosion)
 set( Rust_RUSTUP_INSTALL_MISSING_TARGET ON)
 
-corrosion_import_crate( MANIFEST_PATH ${CMAKE_SOURCE_DIR}/rust/Cargo.toml)
+corrosion_import_crate( MANIFEST_PATH ${CMAKE_SOURCE_DIR}/rust/Cargo.toml PROFILE dev)
 corrosion_set_linker(issue ${LINKER})
 add_library(${CMAKE_PROJECT_NAME} SHARED
         dummy.cpp)

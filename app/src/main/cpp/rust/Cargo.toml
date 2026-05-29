@@ -10,3 +10,7 @@ crate-type = ["cdylib"]
 jni = { version = "0.22", features = ["invocation"] }
 log = "0.4"
 android_logger = "0.15"
+
+[profile.dev]
+debug = true
+opt-level = 0
